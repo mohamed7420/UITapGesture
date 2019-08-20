@@ -19,9 +19,12 @@ class ViewController: UIViewController {
         
         
         imageMohamed.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTapGesture(recognizer:)))
-        tapGesture.numberOfTapsRequired = 1
-        imageMohamed.addGestureRecognizer(tapGesture)
+        
+        imageMohamed.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongTap)))
+        
+////        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTapGesture(recognizer:)))
+////        tapGesture.numberOfTapsRequired = 1
+//        imageMohamed.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleImageTapGesture(recognizer:))))
     }
     
     
@@ -37,6 +40,15 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    @objc func handleLongTap(){
+        
+        print("Long Tap is success")
+        
+    }
+    
+    
+    
 
 
 }
